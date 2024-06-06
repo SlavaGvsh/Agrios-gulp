@@ -1,0 +1,187 @@
+.nav {
+   @include respond(tab-port) {
+      display: none;
+      position: absolute;
+      top: 16.5rem;
+      left: 2rem;
+      &.active {
+         display: flex;
+         width: 100%;
+      }
+   }
+   @include respond(phone) {
+      display: block;
+      width: 100%;
+      padding: 11rem 1rem 1rem;
+      left: 0;
+      position: fixed;
+      top: -100%;
+      transition: all 1s ease;
+      background: #292825;
+
+      &.active {
+         top: 14.5rem;
+         z-index: 1;
+         bottom: 0;
+
+         // @include respond(phone-small) {
+         //    top: 14.5rem;
+         // }
+      }
+   }
+
+   &__list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4.5rem;
+      z-index: 50;
+
+      @include respond(tab-port) {
+         flex-direction: column;
+         background: rgb(41 40 37);
+         border-radius: 2rem;
+         width: 20rem;
+      }
+      @include respond(tab-land) {
+         gap: 2rem;
+      }
+      @include respond(phone) {
+         width: 100%;
+         justify-content: flex-start;
+      }
+   }
+   &__item {
+      position: relative;
+      &.active {
+         .drop__list {
+            display: block;
+         }
+      }
+      .drop__list{
+         display: none;
+         position: absolute;
+         width: 18rem;
+         background: $color-gray-1;
+         @include respond(tab-port) {
+            left: 100%;
+         }
+         @include respond(phone) {
+            width: 100%;
+            position: static;
+         }
+         .drop__item {
+            text-align: center;
+            border: 0.1rem solid rgba(0, 0, 0, 0.1);
+            .drop__link {
+               display: block;
+               color: $color-black;
+            }
+            &:hover {
+               opacity: 0.5;
+            }
+         }
+      }
+      @media (min-width: 900px) {
+         &:hover {
+            .drop__list {
+               display: block;
+            }
+         }
+      }
+
+      // }
+      @include respond(tab-port) {
+         width: 100%;
+         text-align: center;
+      }
+   }
+   &__link {
+      color: $color-gray;
+      padding: 1rem 1.5rem;
+      display: block;
+      &.drop-btn {
+         @include respond(tab-port) {
+            display: none;
+         }
+      }
+      &.active {
+         color: $color-black;
+         @include respond(tab-port) {
+            color: #dbd5ad;
+         }
+      }
+      @include respond(tab-port) {
+         width: 100%;
+      }
+      @include respond(phone) {
+         display: block;
+         width: 100%;
+      }
+
+      &:hover {
+         // transform: translateY(-0.4rem);
+         box-shadow: $box-shadow;
+         padding: 1rem 1.5rem;
+      }
+      &:active {
+         // transform: translateY(-0.2rem);
+         box-shadow: (0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.1));
+      }
+   }
+   .mobile-drop {
+      display: none;
+      @include respond(tab-port) {
+         display: block;
+      }
+   }
+   // .drop{
+   //    &__list{
+
+   //    }
+   //    &__link{
+   //       color: $color-black;
+   //    }
+   // }
+}
+
+.drop-btn {
+   position: relative;
+   &::before {
+      content: "\e98c";
+      position: absolute;
+      top: 10px;
+      right: 0.2rem;
+      display: block;
+      font-family: "icomoon";
+      font-size: 1rem;
+   }
+   &:hover::before {
+      content: "\e98b";
+   }
+   &:hover ul {
+      display: flex;
+      position: absolute;
+      padding-top: 2rem;
+      // flex: 0 1 10rem;
+      min-width: 10rem;
+      top: 3.5rem;
+      left: 0;
+      gap: 1rem;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      background: #656060;
+      opacity: 0.5;
+      @include respond(tab-port) {
+      }
+      li {
+         a {
+            padding: 1rem 1rem;
+            display: block;
+         }
+      }
+   }
+}
+// ul {
+//    display: none;
+// }

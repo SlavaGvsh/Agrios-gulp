@@ -1,0 +1,51 @@
+// Тут мы описываем наши стили для основных элементов
+.title {
+   font-size: 4.8rem;
+   line-height: 1.2;
+   font-weight: 800;
+   color: $color-black;
+   text-align: center;
+}
+.subtitle {
+   @include font-covered;
+}
+.text {
+   font-size: 2rem;
+   line-height: 1.2;
+   font-weight: 800;
+   color: $color-black;
+}
+
+.saidebar-styles {
+   margin-bottom: 3rem;
+   background-color: #f8f7f0;
+   border-radius: 1rem;
+   padding: 4.6rem 5rem 3.6rem;
+}
+.title-sidebar {
+   font-size: 2rem;
+   line-height: 1.2;
+   font-weight: 800;
+   color: #1f1e17;
+   display: block;
+   margin-bottom: 2.2rem;
+}
+.comments {
+   display: flex;
+   gap: 1rem;
+   align-items: center;
+   justify-content: center;
+}
+.comments__icon {
+   color: #eec044;
+   &:not(:first-child) {
+      margin-left: 1rem;
+   }
+}
+.read-more {
+   font-size: 1.6rem;
+   line-height: 1.2;
+   font-weight: 600;
+   color: $color-black;
+}
+

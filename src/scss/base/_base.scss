@@ -1,0 +1,47 @@
+html {
+   font-size: calc(10px / 16px * 100%);
+   @include respond(tab-land) {
+      font-size: calc(9px / 16px * 100%);
+   }
+   @include respond(tab-port) {
+      font-size: calc(7px / 16px * 100%);
+   }
+   @include respond(phone) {
+      font-size: calc(6px / 16px * 100%);
+   }
+   // @include respond(big-screen) {
+   //    font-size: calc(14px / 16px * 100%);
+   // }
+}
+body {
+   font-family: "Manrope", sans-serif;
+   // font-family: "Covered By Your Grace", cursive;
+   font-weight: 600;
+   font-style: normal;
+   color: $color-gray;
+   font-size: $font-size-paragraph;
+   line-height: 3.6rem;
+   background: $color-white;
+   padding-top: 2rem;
+}
+[class*="__container"] {
+   max-width: 123rem;
+   margin: 0 auto;
+   padding: 0 1.5rem;
+}
+[class*="__container-1"] {
+   max-width: 151rem;
+   margin: 0 auto;
+   padding: 0 1.5rem;
+}
+body.lock {
+   overflow: hidden;
+}
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+}
+.main {
+   flex: 1 1 auto;
+}

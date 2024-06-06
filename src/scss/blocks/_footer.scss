@@ -1,0 +1,195 @@
+.footer {
+   background-color: $color-bg-footer;
+   &__container {
+      padding: 11.8rem 1.5rem;
+   }
+   &__row {
+      // display: flex;
+      // justify-content: space-between;
+      // align-items: flex-start;
+      gap: 1.6rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      @include respond(phone-small) {
+         text-align: center;
+      }
+      @include respond(phone) {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 3rem;
+         justify-items: center;
+      }
+      @include respond(phone-small) {
+         grid-template-columns: repeat(1, 1fr);
+         // gap: 3rem;
+      }
+   }
+   // &__colum {
+   //    flex: 1;
+   // }
+   &__logo {
+      margin-bottom: 2.1rem;
+   }
+   &__social {
+      display: flex;
+      flex-direction: column;
+      @include respond(phone-small){
+         align-items: center;
+      }
+      i {
+         color: $color-white;
+      }
+   }
+   &__title {
+      color: $color-white;
+      display: inline-block;
+      font-size: 2rem;
+      line-height: 1.2;
+      font-weight: 700;
+      padding: 1.2rem;
+      margin-bottom: 2.6rem;
+      cursor: pointer;
+      border-bottom: 0.2rem solid transparent;
+      background-image: linear-gradient(to right, $color-green, $color-green);
+      background-repeat: no-repeat;
+      background-size: 10px 2px; /* Линия будет шириной 10px и высотой 2px */
+      background-position: left bottom; /* Положение в левом нижнем углу */
+      transition: 0.3s;
+      &:hover {
+         background-size: 100% 2px;
+      }
+   }
+
+   .form {
+      display: flex;
+      align-items: stretch;
+      justify-content: flex-start;
+
+      &__input {
+         width: 22rem;
+         padding: 1.6rem 0 1.6rem 2.1rem;
+         border-radius: 1rem 0 0 1rem;
+         &::placeholder {
+            color: #878680;
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.2;
+         }
+      }
+      &__btn {
+         width: 5rem;
+         // height: 5rem;
+         background-color: $color-green;
+         border-radius: 0 1rem 1rem 0;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         i {
+            font-size: 1rem;
+            color: $color-white;
+         }
+      }
+   }
+
+   .social {
+      &__link {
+         background-color: #1f1e17;
+         border: none;
+      }
+   }
+   .contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.6rem;
+      margin-bottom: 2.5rem;
+
+      &__item {
+         display: flex;
+         align-items: flex-start;
+         gap: 0.6rem;
+         i {
+            color: #eec044;
+            font-size: 1.5rem;
+         }
+      }
+      &__text {
+         font-size: 1.5rem;
+         font-weight: 500;
+         line-height: 1.2;
+         color: $color-gray-footer;
+      }
+   }
+   &__bottom {
+      background-color: #1f1e17;
+      .footer__container {
+         padding: 2rem 1.5rem;
+         @include flex;
+         @include respond(phone-small) {
+            flex-direction: column;
+         }
+      }
+   }
+   &__bottom-copy {
+      font-size: 1.4rem;
+   }
+   &__bottom-list {
+      @include flex;
+   }
+   &__bottom-link {
+      font-size: 1.4rem;
+      padding: 1rem 1.5rem;
+      color: #a5a49a;
+      &:not(:last-child) {
+         border-right: 0.1rem solid #a5a49a;
+      }
+      &:hover {
+         opacity: 0.5;
+      }
+   }
+}
+
+.explore {
+   &__item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      i {
+         color: $color-gray-footer;
+         font-size: 1.5rem;
+         margin-right: 1rem;
+         display: block;
+      }
+   }
+   &__link {
+      color: $color-gray-footer;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 2;
+      padding: 0.5rem 1rem;
+      &:hover {
+         opacity: 0.5;
+      }
+   }
+}
+.news-footer {
+   &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      &:not(:last-child) {
+         margin-bottom: 2.5rem;
+      }
+   }
+   &__text {
+      margin-bottom: 0.1rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: $color-white;
+      line-height: 1.2;
+   }
+   &__date {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #eec044;
+   }
+}

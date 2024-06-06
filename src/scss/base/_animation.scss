@@ -1,0 +1,42 @@
+// //Animation that raises the button 5 rem up
+
+@keyframes BtnToUp {
+   0% {
+      opacity: 0;
+      transform: translateY(5rem);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateY(0rem);
+   }
+}
+// //animation that moves the button from left to right
+// @keyframes leftToRight {
+//    0% {
+//       opacity: 0;
+//       transform: translateX(10rem);
+//    }
+
+//    100% {
+//       opacity: 1;
+//       transform: translateX(0rem);
+//    }
+// }
+// //animation that moves the button from right  to left
+// @keyframes RightToleft {
+//    0% {
+//       opacity: 0;
+//       transform: translateX(-10rem);
+//    }
+//    100% {
+//       opacity: 1;
+//       transform: translateX(0);
+//    }
+// }
+
+// @media (max-width: 767px) {
+//    html {
+//       font-size: calc(5px / 16px * 100%);
+//    }
+// }

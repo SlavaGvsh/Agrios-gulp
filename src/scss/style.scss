@@ -1,0 +1,33 @@
+// @import "abstracts/variable.scss";
+// @import "abstracts/mixins.scss";
+@import '~owl.carousel/dist/assets/owl.carousel.css';
+@import '~owl.carousel/dist/assets/owl.theme.default.css';
+
+@import "base/animation.scss";
+
+@import "base/reset";
+@import "base/mixins";
+@import "base/vars";
+// @import "base/reset";
+@import "base/base";
+@import "base/home";
+
+@import "base/utils";
+@import "base/icomoon";
+
+@import "base/typography.scss";
+@import "base/_button";
+
+
+// @import "components/button.scss";
+
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/navigation";
+
+// @import "base/home";
+// @import "pages/reviews.scss";
+// @import "pages/about.scss";
+// @import "pages/services.scss";
+// @import "pages/agriculture-products.scss";
+// @import "pages/blog.scss";
