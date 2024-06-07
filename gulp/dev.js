@@ -43,7 +43,7 @@ const plumberNotify = (title) => {
 		errorHandler: notify.onError({
 			title: title,
 			message: 'Error <%= error.message %>',
-			sound: false,
+			sound: true,
 		}),
 	};
 };
@@ -213,6 +213,7 @@ gulp.task('js:dev', function () {
 const serverOptions = {
 	livereload: true,
 	open: true,
+	// fallback: 'index.html', // Добавляем fallback для обработки маршрутов
 };
 
 gulp.task('server:dev', function () {

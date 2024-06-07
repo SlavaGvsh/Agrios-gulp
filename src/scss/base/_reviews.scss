@@ -1,0 +1,29 @@
+.reviews-items {
+   &__container-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      justify-items: center;
+      justify-content: center;
+      gap: 5rem;
+      margin: 3rem 0;
+      background-color: $color-white;
+      .reviews__item {
+         box-shadow: $box-shadow;
+         border-radius: 1rem;
+         padding: 3rem 1rem;
+        
+      }
+      .reviews__carousel-body {
+      }
+   }
+}
+.hidden {
+   display: none;
+}
+.text-align{
+   text-align: center;
+  padding-bottom: 3rem;
+}
+#show-more{
+  
+}

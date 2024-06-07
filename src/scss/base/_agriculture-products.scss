@@ -1,0 +1,258 @@
+.agro-prod {
+   &__container {
+      display: grid;
+      grid-template-columns: minmax(370px, 1fr) 3fr;
+      grid-template-areas: "sidebar body";
+      gap: 3rem;
+      // height: 100vh;
+      padding: 12rem 1.5rem;
+      @media (max-width: 1120px) {
+         grid-template-columns: minmax(270px, 1fr) 3fr;
+         gap: 2rem;
+      }
+      @include respond(tab-port) {
+         grid-template-columns: 1fr; /* Одна колонка */
+         grid-template-areas:
+            "sidebar"
+            "body"; /* Сайдбар под основным контентом */
+      }
+   }
+
+   &__body {
+      grid-area: body;
+      // background: #228036;
+   }
+}
+#sidebar {
+   grid-area: sidebar;
+   // background: #dc4848;
+}
+.sidebar {
+   &__nav {
+      // margin-bottom: 3rem;
+      // background-color: $color-bg-social;
+      // border-radius: 1rem;
+      // padding: 4.6rem 5rem 3.6rem;
+      @include respond(tab-port-1) {
+         padding: 2.6rem 3rem 2.6rem;
+      }
+   }
+   &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+   }
+   &__item {
+      width: 100%;
+      &:not(:last-child) {
+         margin-bottom: 0.8rem;
+      }
+   }
+   &__title {
+     
+   }
+
+   &__link {
+      font-size: 1.6rem;
+      line-height: 1.9;
+
+      font-weight: 600;
+      color: $color-gray;
+   }
+}
+.help {
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   padding: 4.1rem 5.8rem 4.6rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border-radius: 1rem;
+   @media (max-width: 1120px) {
+      padding: 4.1rem 3.8rem 4.6rem;
+   }
+   &__title {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      font-weight: 800;
+      color: $color-white;
+      margin-bottom: 3.3rem;
+   }
+   &__text {
+      font-size: 1.6rem;
+      line-height: 1.8;
+      font-weight: 500;
+      color: #c3f5c1;
+      margin-bottom: 0.7rem;
+      text-align: center;
+   }
+   &__link {
+      font-family: "Covered By Your Grace", cursive;
+      font-size: 3.6rem;
+      line-height: 1.9;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      color: $color-white;
+   }
+   .btn-sidebar {
+      text-transform: capitalize;
+      font-weight: 700;
+   }
+}
+.agro-prod {
+   &__img {
+      border-radius: 1rem;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 1.7rem;
+      &::before {
+         content: "\e912";
+         position: absolute;
+         color: #fff;
+         font-family: "icomoon";
+         font-size: 4rem;
+         font-weight: 300;
+         right: 2rem;
+         bottom: 0;
+         width: 6.2rem;
+         height: 6.2rem;
+         background-color: #c5ce38;
+         border-radius: 1rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+      img {
+         width: 100%;
+         max-height: 32rem;
+         object-fit: cover;
+      }
+   }
+   &__title {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.4;
+      color: $color-black;
+      margin-bottom: 1.8rem;
+   }
+   &__text {
+      font-weight: 500;
+      margin-bottom: 3.4rem;
+   }
+}
+.advantages {
+   display: flex;
+   align-items: flex-start;
+   gap: 3rem;
+   // flex-wrap: wrap;
+   margin-bottom: 5rem;
+   @include respond(tab-port-1) {
+      flex-direction: column;
+   }
+   @include respond(tab-port) {
+      flex-direction: row;
+   }
+   @include respond(phone) {
+      flex-direction: column;
+      align-items: center;
+   }
+   &__item {
+      // flex-basis: auto;
+      flex: 1;
+      // flex-grow: 1;
+   }
+   &__img {
+      border-radius: 1rem;
+      overflow: hidden;
+      margin-bottom: 2.4rem;
+      width: 37rem;
+      height: 22rem;
+      text-align: center;
+      @include respond(phone) {
+         margin: 0 auto 2rem;
+      }
+   }
+   &__title {
+      margin-bottom: 1.4rem;
+      font-size: 3rem;
+      line-height: 1.2rem;
+      color: $color-black;
+      font-weight: 800;
+   }
+   &__text {
+      font-weight: 500;
+   }
+   &__label {
+      font-weight: 700;
+      line-height: 2.2;
+      color: $color-black;
+      max-width: 28rem;
+      display: block;
+      @include respond(tab-port-1) {
+         max-width: 100%;
+      }
+   }
+}
+
+.agro-prod__content {
+   display: none; /* По умолчанию скрываем все контенты */
+}
+
+.agro-prod__content.active {
+   display: block; /* Показываем активный контент */
+}
+.sidebar__link.active {
+   color: #968526;
+   font-weight: 900;
+}
+
+.accordion {
+   &__item {
+      margin-bottom: 1rem;
+   }
+   &__content {
+      display: none; /* Скрываем содержимое по умолчанию */
+   }
+
+   &__header {
+      cursor: pointer; /* Указываем, что заголовок можно кликать */
+      padding: 2.5rem 3.8rem;
+      background-color: #f8f7f0;
+      border-radius: 1rem;
+      display: block;
+      position: relative;
+      color: $color-black;
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+
+      &::after {
+         content: "";
+         position: absolute;
+         right: 1rem;
+         top: 50%;
+         width: 3rem;
+         height: 3rem;
+         border: solid #fad70e;
+         border-width: 0 0.4rem 0.4rem 0;
+         transform: translateY(-50%) rotate(45deg);
+         transition: transform 0.5s ease;
+         background-color: #c5ce38;
+      }
+
+      &.active::after {
+         transform: translateY(-50%) rotate(-135deg); // Arrow pointing up
+         border: solid #a9a37e;
+         border-width: 0 0.4rem 0.4rem 0;
+      }
+   }
+
+   &__header.active {
+   }
+
+   &__content.active {
+      display: block; /* Показываем содержимое, когда оно активно */
+      padding: 2.5rem 3.8rem;
+   }
+}

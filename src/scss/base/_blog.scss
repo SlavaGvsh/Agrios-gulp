@@ -1,0 +1,212 @@
+.blog {
+   &__container {
+      display: grid;
+      grid-template-columns: 3fr minmax(370px, 1fr);
+      grid-template-areas: "body sidebar";
+      gap: 3rem;
+      // height: 100vh;
+      padding: 12rem 1.5rem;
+      @media (max-width: 1120px) {
+         grid-template-columns: 3fr minmax(320px, 1fr);
+         gap: 2rem;
+      }
+      @include respond(tab-port) {
+         grid-template-columns: 1fr; /* Одна колонка */
+         grid-template-areas:
+            "sidebar"
+            "body"; /* Сайдбар под основным контентом */
+         justify-items: center;
+      }
+   }
+
+   &__body {
+      grid-area: body;
+      .comments {
+         justify-content: flex-start;
+      }
+   }
+   &__item {
+      border-bottom: 0.1rem solid #ece7e2;
+      padding-bottom: 2.6rem;
+      &:not(:last-child) {
+         margin-bottom: 3rem;
+      }
+   }
+   &__img {
+      position: relative;
+      margin-bottom: 3.1rem;
+      .data {
+         position: absolute;
+         bottom: 2rem;
+         left: 2rem;
+         font-size: 1.4rem;
+         line-height: 1.8;
+         font-weight: 800;
+         color: $color-white;
+         padding: 1rem 2.5rem;
+         background-color: $color-green;
+         border-radius: 1rem;
+      }
+   }
+   &__comments {
+      margin-bottom: 1rem;
+   }
+   &__title {
+      font-size: 3rem;
+      line-height: 1.2;
+      font-weight: 800;
+      color: $color-black;
+      margin-bottom: 1rem;
+   }
+   &__text {
+      margin-bottom: 3.3rem;
+   }
+}
+#sidebar {
+   grid-area: sidebar;
+}
+.form-search {
+   display: flex;
+   align-items: stretch;
+   justify-content: flex-start;
+   margin-bottom: 3rem;
+
+   &__input {
+      width: 100%;
+      padding: 3.2rem 0 3.2rem 5rem;
+      border-radius: 1rem 0 0 1rem;
+
+      background-color: #eec044;
+      &::placeholder {
+         color: $color-white;
+         font-size: 1.6rem;
+         font-weight: 500;
+         line-height: 1.2;
+         &:hover {
+            color: $color-white;
+         }
+      }
+   }
+   &__btn {
+      width: 12rem;
+      // height: 5rem;
+      background-color: #eec044;
+      border-radius: 0 1rem 1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+         opacity: 0.5;
+      }
+      i {
+         font-size: 5rem;
+         color: $color-white;
+      }
+   }
+}
+.latest-posts {
+   // margin-bottom: 3rem;
+   // background-color: #f8f7f0;
+   // border-radius: 1rem;
+   padding: 4.6rem 3rem 3.6rem;
+   &__item:not(:last-child) {
+      margin-bottom: 0.1rem;
+   }
+   &__title {
+      margin-left: 2rem;
+   }
+   &__link {
+      display: flex;
+      justify-content: flex-start;
+      gap: 2rem;
+      padding: 2rem;
+      &:hover {
+         background-color: $color-white;
+         border-radius: 1rem;
+      }
+   }
+   &__img {
+      // width: 7rem;
+      height: 7rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      object-fit: cover;
+      flex: 0 0 7rem;
+   }
+   &__boby {
+      .users {
+         display: flex;
+         gap: 0.5rem;
+         align-items: center;
+         margin-bottom: 1rem;
+         i {
+            color: #eec044;
+         }
+      }
+   }
+   &__user {
+      display: block;
+      font-size: 1.4rem;
+      line-height: 1.1;
+      font-weight: 500;
+      color: $color-gray;
+   }
+   &__text {
+      font-size: 1.4rem;
+      line-height: 1.2;
+      font-weight: 800;
+      color: $color-black;
+      margin: 0;
+   }
+}
+.tabs {
+   &__item {
+      display: inline-block;
+      margin: 0 1rem 1rem 0;
+   }
+   &__link {
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.9;
+      color: $color-black;
+      padding: 0.5rem 2.5rem;
+      border-radius: 1rem;
+      background-color: $color-white;
+      display: inline-block;
+      &:hover {
+         opacity: 0.5;
+      }
+   }
+}
+
+.pagination {
+   &-container {
+      display: flex;
+      justify-content: center;
+   }
+   &__list {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      justify-content: flex-start;
+   }
+   &__link {
+      line-height: 1.9;
+      color: $color-gray;
+      padding: 1rem 1.6rem;
+      border: 0.1rem solid $color-gray-1;
+      border-radius: 1rem;
+      transition:
+         background-color 0.3s,
+         color 0.3s;
+      &:hover {
+         background-color: $color-green;
+         color: #fff;
+         opacity: 0.5;
+      }
+      &.active {
+         background-color: $color-green;
+         color: #fff;
+     }
+   }
+}
